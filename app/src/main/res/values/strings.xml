@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">RecyclerViewDemo</string>
+    <string-array name="title_array">
+        <item>SNG</item>
+        <item>IEG</item>
+        <item>WXG</item>
+        <item>OMG</item>
+        <item>CDG</item>
+        <item>MIG</item>
+    </string-array>
+</resources>
