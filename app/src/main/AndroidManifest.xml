@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="me.xiazdong.recyclerviewdemo">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -15,7 +17,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".demo1.Activity1"></activity>
+        <activity android:name=".demo1.Activity1" />
+        <activity android:name=".demo2.Activity2" />
+
+
     </application>
 
 </manifest>

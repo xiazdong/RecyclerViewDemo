@@ -5,12 +5,20 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 
 import me.xiazdong.recyclerviewdemo.R;
 
+
+/**
+ * Demo1：RecyclerView的基本使用。
+ * - 为RecyclerView添加OnItemClickListener接口。
+ * - ItemDecoration的范例：DividerItemDecoration。
+ */
 public class Activity1 extends AppCompatActivity {
 
     private RecyclerView mRecyclerView;

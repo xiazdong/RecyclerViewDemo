@@ -2,13 +2,21 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     >
 
     <Button
         android:id="@+id/btn_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="1、最简单的使用"
+        android:text="1、RecyclerView入门"
+        android:onClick="jump"
+        />
+    <Button
+        android:id="@+id/btn_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="2、ListView局部刷新"
         android:onClick="jump"
         />
 </LinearLayout>

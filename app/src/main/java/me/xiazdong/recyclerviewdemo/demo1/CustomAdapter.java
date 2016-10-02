@@ -52,8 +52,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.VH> {
     }
 
     public static class VH extends RecyclerView.ViewHolder{
-        private final TextView title;
-        private final TextView number;
+        public final TextView title;
+        public final TextView number;
         public VH(View v) {
             super(v);
             title = (TextView) v.findViewById(R.id.title);
