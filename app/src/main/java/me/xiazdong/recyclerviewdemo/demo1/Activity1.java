@@ -18,6 +18,7 @@ import me.xiazdong.recyclerviewdemo.R;
  * Demo1：RecyclerView的基本使用。
  * - 为RecyclerView添加OnItemClickListener接口。
  * - ItemDecoration的范例：DividerItemDecoration。
+ * - 为RecyclerView实现Headerview和Footerview。
  */
 public class Activity1 extends AppCompatActivity {
 
