@@ -4,9 +4,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -31,6 +34,7 @@ public class Activity1 extends AppCompatActivity {
         mRecyclerView = (RecyclerView) findViewById(R.id.rv);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL_LIST));
+        /*
         CustomAdapter adapter = new CustomAdapter(initData());
         adapter.setOnClickListener(new CustomAdapter.OnClickListener() {
             @Override
@@ -38,8 +42,15 @@ public class Activity1 extends AppCompatActivity {
                 Toast.makeText(Activity1.this,"position=" + position, Toast.LENGTH_SHORT).show();
             }
         });
+        */
 
-        mRecyclerView.setAdapter(adapter);
+        NormalAdapter adapter = new NormalAdapter(initData());
+        NormalAdapterWrapper wrapper = new NormalAdapterWrapper(adapter);
+        View headerView = LayoutInflater.from(this).inflate(R.layout.item_header, mRecyclerView, false);
+        View footerView = LayoutInflater.from(this).inflate(R.layout.item_footer, mRecyclerView, false);
+        wrapper.addFooterView(footerView);
+        wrapper.addHeaderView(headerView);
+        mRecyclerView.setAdapter(wrapper);
     }
 
     public ArrayList<ObjectModel> initData(){

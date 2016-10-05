@@ -1,21 +1,15 @@
 package me.xiazdong.recyclerviewdemo.demo1;
 
-import android.animation.ObjectAnimator;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import java.util.ArrayList;
-import java.util.List;
-
 import me.xiazdong.recyclerviewdemo.R;
 
-/**
- * Created by xiazdong on 16/9/26.
- */
 public class CustomAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     public enum ITEM_TYPE{
@@ -53,6 +47,7 @@ public class CustomAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
             return new FooterVH(v);
         } else if(viewType == ITEM_TYPE.ITEM_TYPE_NORMAL.ordinal()){
             v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_1, parent, false);
+            Log.i("onCreateViewHolder","onCreateViewHolder");
             return new VH(v);
         }
         return null;
