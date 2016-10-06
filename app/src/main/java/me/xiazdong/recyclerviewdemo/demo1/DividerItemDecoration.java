@@ -23,6 +23,9 @@ import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+
+import me.xiazdong.recyclerviewdemo.R;
+
 public class DividerItemDecoration extends RecyclerView.ItemDecoration {
     private static final int[] ATTRS = new int[]{
             android.R.attr.listDivider
@@ -34,8 +37,13 @@ public class DividerItemDecoration extends RecyclerView.ItemDecoration {
     public DividerItemDecoration(Context context, int orientation) {
         final TypedArray a = context.obtainStyledAttributes(ATTRS);
         mDivider = a.getDrawable(0);
+        //mDivider = context.getResources().getDrawable(R.drawable.divider);
         a.recycle();
         setOrientation(orientation);
+    }
+
+    public void setDividerDrawable(Drawable drawable){
+        this.mDivider = drawable;
     }
     public void setOrientation(int orientation) {
         if (orientation != HORIZONTAL_LIST && orientation != VERTICAL_LIST) {
@@ -50,7 +58,7 @@ public class DividerItemDecoration extends RecyclerView.ItemDecoration {
      * @param parent
      */
     @Override
-    public void onDraw(Canvas c, RecyclerView parent) {
+    public void onDraw(Canvas c, RecyclerView parent, RecyclerView.State state) {
         if (mOrientation == VERTICAL_LIST) {
             drawVertical(c, parent);
         } else {
@@ -97,9 +105,13 @@ public class DividerItemDecoration extends RecyclerView.ItemDecoration {
      * 这个函数在计算RecyclerView中每个child大小时会用到
      */
     @Override
-    public void getItemOffsets(Rect outRect, int itemPosition, RecyclerView parent) {
+    public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
         if (mOrientation == VERTICAL_LIST) {
-            outRect.set(0, 0, 0, mDivider.getIntrinsicHeight());
+            int position = ((RecyclerView.LayoutParams)view.getLayoutParams()).getViewLayoutPosition();
+            int count = parent.getAdapter().getItemCount();
+            if(position < count - 1) {
+                outRect.set(0, 0, 0, mDivider.getIntrinsicHeight());
+            }
         } else {
             outRect.set(0, 0, mDivider.getIntrinsicWidth(), 0);
         }

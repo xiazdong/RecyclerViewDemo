@@ -19,4 +19,11 @@
         android:text="2、ListView局部刷新"
         android:onClick="jump"
         />
+    <Button
+        android:id="@+id/btn_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="3、RecyclerView拖拽、侧滑删除"
+        android:onClick="jump"
+        />
 </LinearLayout>

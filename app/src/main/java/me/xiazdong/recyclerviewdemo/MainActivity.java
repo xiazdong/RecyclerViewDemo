@@ -7,6 +7,7 @@ import android.view.View;
 
 import me.xiazdong.recyclerviewdemo.demo1.Activity1;
 import me.xiazdong.recyclerviewdemo.demo2.Activity2;
+import me.xiazdong.recyclerviewdemo.demo3.Activity3;
 
 public class MainActivity extends AppCompatActivity{
 
@@ -24,6 +25,9 @@ public class MainActivity extends AppCompatActivity{
                 break;
             case R.id.btn_2:
                 intent.setClass(this,Activity2.class);
+                break;
+            case R.id.btn_3:
+                intent.setClass(this, Activity3.class);
                 break;
         }
         startActivity(intent);
