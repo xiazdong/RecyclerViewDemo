@@ -26,4 +26,18 @@
         android:text="3、RecyclerView拖拽、侧滑删除"
         android:onClick="jump"
         />
+    <Button
+        android:id="@+id/btn_4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="4、RecyclerView闪烁问题"
+        android:onClick="jump"
+        />
+    <Button
+        android:id="@+id/btn_5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="5、RecyclerView setEmptyView"
+        android:onClick="jump"
+        />
 </LinearLayout>

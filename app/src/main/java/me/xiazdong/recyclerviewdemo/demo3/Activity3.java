@@ -49,7 +49,6 @@ public class Activity3 extends AppCompatActivity implements OnStartDragListener{
     }
 }
 
-
 interface OnStartDragListener{
     void startDrag(RecyclerView.ViewHolder holder);
 }

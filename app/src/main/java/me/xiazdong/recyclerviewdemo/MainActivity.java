@@ -8,6 +8,8 @@ import android.view.View;
 import me.xiazdong.recyclerviewdemo.demo1.Activity1;
 import me.xiazdong.recyclerviewdemo.demo2.Activity2;
 import me.xiazdong.recyclerviewdemo.demo3.Activity3;
+import me.xiazdong.recyclerviewdemo.demo4.Activity4;
+import me.xiazdong.recyclerviewdemo.demo5.Activity5;
 
 public class MainActivity extends AppCompatActivity{
 
@@ -28,6 +30,12 @@ public class MainActivity extends AppCompatActivity{
                 break;
             case R.id.btn_3:
                 intent.setClass(this, Activity3.class);
+                break;
+            case R.id.btn_4:
+                intent.setClass(this, Activity4.class);
+                break;
+            case R.id.btn_5:
+                intent.setClass(this, Activity5.class);
                 break;
         }
         startActivity(intent);

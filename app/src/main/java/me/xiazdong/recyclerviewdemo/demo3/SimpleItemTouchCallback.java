@@ -2,6 +2,7 @@ package me.xiazdong.recyclerviewdemo.demo3;
 
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
+import android.util.Log;
 
 import java.util.Collections;
 import java.util.List;
@@ -52,6 +53,7 @@ public class SimpleItemTouchCallback extends ItemTouchHelper.Callback {
     @Override
     public void onSelectedChanged(RecyclerView.ViewHolder viewHolder, int actionState) {
         super.onSelectedChanged(viewHolder, actionState);
+        Log.i("Callback", actionState + "");
         if(actionState != ItemTouchHelper.ACTION_STATE_IDLE){
             NormalAdapter.VH holder = (NormalAdapter.VH)viewHolder;
             holder.itemView.setBackgroundColor(0xffbcbcbc);
