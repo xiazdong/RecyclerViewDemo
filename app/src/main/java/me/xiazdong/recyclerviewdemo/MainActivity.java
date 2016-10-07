@@ -10,6 +10,7 @@ import me.xiazdong.recyclerviewdemo.demo2.Activity2;
 import me.xiazdong.recyclerviewdemo.demo3.Activity3;
 import me.xiazdong.recyclerviewdemo.demo4.Activity4;
 import me.xiazdong.recyclerviewdemo.demo5.Activity5;
+import me.xiazdong.recyclerviewdemo.demo6.Activity6;
 
 public class MainActivity extends AppCompatActivity{
 
@@ -36,6 +37,9 @@ public class MainActivity extends AppCompatActivity{
                 break;
             case R.id.btn_5:
                 intent.setClass(this, Activity5.class);
+                break;
+            case R.id.btn_6:
+                intent.setClass(this, Activity6.class);
                 break;
         }
         startActivity(intent);

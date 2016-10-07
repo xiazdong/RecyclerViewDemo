@@ -40,4 +40,11 @@
         android:text="5、RecyclerView setEmptyView"
         android:onClick="jump"
         />
+    <Button
+        android:id="@+id/btn_6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="6、RecyclerView 瀑布流"
+        android:onClick="jump"
+        />
 </LinearLayout>

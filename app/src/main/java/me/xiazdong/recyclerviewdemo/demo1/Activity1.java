@@ -106,10 +106,6 @@ public class Activity1 extends AppCompatActivity {
                 mDecoration = new DividerItemDecoration(this, DividerItemDecoration.HORIZONTAL_LIST);
                 mRecyclerView.addItemDecoration(mDecoration);
                 break;
-            case R.id.item_staggered:
-                mLayoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
-                mRecyclerView.setLayoutManager(mLayoutManager);
-                break;
         }
         return super.onOptionsItemSelected(item);
     }

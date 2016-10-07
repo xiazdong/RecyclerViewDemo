@@ -16,7 +16,4 @@
     <item android:id="@+id/item_hlistview"
         android:title="横向ListView"
         app:showAsAction="never"/>
-    <item android:id="@+id/item_staggered"
-        android:title="瀑布流"
-        app:showAsAction="never"/>
 </menu>
