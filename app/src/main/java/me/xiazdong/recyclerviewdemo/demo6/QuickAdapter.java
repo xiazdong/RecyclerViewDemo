@@ -1,10 +1,11 @@
-package me.xiazdong.recyclerviewdemo.demo7;
+package me.xiazdong.recyclerviewdemo.demo6;
 
 import android.support.v7.widget.RecyclerView;
 import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import java.util.List;
 
@@ -60,6 +61,11 @@ public abstract class QuickAdapter<T> extends RecyclerView.Adapter<QuickAdapter.
                 mViews.put(id, v);
             }
             return (T)v;
+        }
+
+        public void setText(int id, String value){
+            TextView view = getView(id);
+            view.setText(value);
         }
     }
 }

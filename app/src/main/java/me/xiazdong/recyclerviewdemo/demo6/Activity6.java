@@ -5,6 +5,9 @@ import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SimpleItemAnimator;
 import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.widget.ImageView;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -14,19 +17,34 @@ import me.xiazdong.recyclerviewdemo.R;
 
 /**
  * RecyclerView实现瀑布流
+ *
+ * 由于该例子比较简单，因此顺便介绍万能Adapter方案
  */
 public class Activity6 extends AppCompatActivity {
     private RecyclerView mRv;
+    private QuickAdapter<Integer> mAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_6);
         mRv = (RecyclerView) findViewById(R.id.rv);
         mRv.setLayoutManager(new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL));
-        StaggeredAdapter mAdapter = new StaggeredAdapter(this,initData());
+        mAdapter = new QuickAdapter<Integer>(initData()) {
+            @Override
+            public int getLayoutId(int viewType) {
+                return R.layout.item_6;
+            }
+
+            @Override
+            public void convert(VH holder, Integer data, int position) {
+                ImageView imageView = holder.getView(R.id.image);
+                Picasso.with(Activity6.this).load(data).into(imageView);
+            }
+        };
         mAdapter.setHasStableIds(true);
-        mRv.setAdapter(mAdapter);
         ((SimpleItemAnimator)mRv.getItemAnimator()).setSupportsChangeAnimations(false);
+        mRv.setAdapter(mAdapter);
+
     }
 
     public List<Integer> initData(){

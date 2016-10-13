@@ -47,4 +47,5 @@
         android:text="6、RecyclerView 瀑布流"
         android:onClick="jump"
         />
+
 </LinearLayout>
