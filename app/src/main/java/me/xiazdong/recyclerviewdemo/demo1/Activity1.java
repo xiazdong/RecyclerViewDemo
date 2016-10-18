@@ -44,6 +44,7 @@ public class Activity1 extends AppCompatActivity {
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.addItemDecoration(mDecoration);
+        mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         /*
         CustomAdapter adapter = new CustomAdapter(initData());
         adapter.setOnClickListener(new CustomAdapter.OnClickListener() {
