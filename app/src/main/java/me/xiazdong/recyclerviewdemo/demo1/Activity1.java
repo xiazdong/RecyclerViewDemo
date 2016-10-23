@@ -44,6 +44,15 @@ public class Activity1 extends AppCompatActivity {
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.addItemDecoration(mDecoration);
+        /*
+        CustomAdapter adapter = new CustomAdapter(initData());
+        adapter.setOnClickListener(new CustomAdapter.OnClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                Toast.makeText(Activity1.this,"position=" + position, Toast.LENGTH_SHORT).show();
+            }
+        });
+        */
 
         mNoHeaderAdapter = new NormalAdapter(mData = initData());
         mAdapter = new NormalAdapterWrapper(mNoHeaderAdapter);
@@ -51,7 +60,6 @@ public class Activity1 extends AppCompatActivity {
         View footerView = LayoutInflater.from(this).inflate(R.layout.item_footer, mRecyclerView, false);
         mAdapter.addFooterView(footerView);
         mAdapter.addHeaderView(headerView);
-
         mRecyclerView.setAdapter(mAdapter);
     }
 
