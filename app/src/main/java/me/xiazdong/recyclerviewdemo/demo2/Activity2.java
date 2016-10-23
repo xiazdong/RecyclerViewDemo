@@ -6,15 +6,12 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
 import android.widget.ListView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import me.xiazdong.recyclerviewdemo.R;
-import me.xiazdong.recyclerviewdemo.demo1.CustomAdapter;
 
 /**
  * Demo2：ListView局部刷新
@@ -55,8 +52,7 @@ public class Activity2 extends AppCompatActivity {
         mLv.setAdapter(mAdapter);
         IntentFilter filter = new IntentFilter(ACTION_UPDATE_PROGRESS);
         registerReceiver(mReceiver, filter);
-
-
+        mAdapter.notifyDataSetChanged();
     }
     List<Job> initData(){
         String[] urls = this.getResources().getStringArray(R.array.download_array);

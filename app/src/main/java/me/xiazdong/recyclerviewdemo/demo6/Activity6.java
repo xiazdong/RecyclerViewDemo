@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SimpleItemAnimator;
 import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.support.v7.widget.Toolbar;
 import android.widget.ImageView;
 
 import com.squareup.picasso.Picasso;
@@ -27,6 +28,11 @@ public class Activity6 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_6);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         mRv = (RecyclerView) findViewById(R.id.rv);
         mRv.setLayoutManager(new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL));
         mAdapter = new QuickAdapter<Integer>(initData()) {
@@ -39,6 +45,12 @@ public class Activity6 extends AppCompatActivity {
             public void convert(VH holder, Integer data, int position) {
                 ImageView imageView = holder.getView(R.id.image);
                 Picasso.with(Activity6.this).load(data).into(imageView);
+                //holder.itemView.setOnClickListener();  此处添加点击事件
+            }
+
+            @Override
+            public int getItemViewType(int position) {
+                return super.getItemViewType(position);
             }
         };
         mAdapter.setHasStableIds(true);
