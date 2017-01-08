@@ -34,7 +34,8 @@ public class Activity5 extends AppCompatActivity {
         mRv.setLayoutManager(new LinearLayoutManager(this));
         mData = new ArrayList<>();
         mAdapter = new NormalAdapter(mData);
-        View view = LayoutInflater.from(this).inflate(R.layout.empty, null);
+        //View view = LayoutInflater.from(this).inflate(R.layout.empty, null);
+        View view = findViewById(R.id.text_empty);
         mRv.setEmptyView(view);
         mRv.setAdapter(mAdapter);
     }

@@ -1,9 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        >
     <me.xiazdong.recyclerviewdemo.demo5.EmptyRecyclerView
         android:id="@+id/rv"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-</RelativeLayout>
+        android:layout_height="match_parent"
+        />
+        <TextView
+            android:id="@+id/text_empty"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:gravity="center"
+            android:text="空数据啊"
+            />
+    </FrameLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#333333"
+        />
+</LinearLayout>

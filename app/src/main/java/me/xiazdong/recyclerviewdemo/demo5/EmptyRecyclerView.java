@@ -58,8 +58,7 @@ public class EmptyRecyclerView extends RecyclerView{
     }
 
     public void setEmptyView(View view){
-        this.mEmptyView = view;
-        ((ViewGroup)this.getRootView()).addView(mEmptyView);
+        mEmptyView = view;
     }
 
     public void setAdapter(RecyclerView.Adapter adapter){
